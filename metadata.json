@@ -1,0 +1,6 @@
+{
+  "name": "Tap & Twist — NFC + Gyroscope Rotary Dial",
+  "description": "Turn your phone into a physical rotary dial using NTAG215 continuous NFC presence, 3-axis gyroscope yaw tracking, mechanical audio-haptic detents, and EEPROM state persistence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

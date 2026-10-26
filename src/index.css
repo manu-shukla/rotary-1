@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-display: 'Space Grotesk', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #0a0a0c;
+    color: #f4f4f5;
+    overflow-x: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+}
+
+/* Brushed aluminum / metallic knurling & dial textures */
+.metallic-dial-gradient {
+  background: conic-gradient(
+    from 0deg,
+    #2c2d30 0deg,
+    #17181a 45deg,
+    #3f4146 90deg,
+    #1c1d20 135deg,
+    #323438 180deg,
+    #18191b 225deg,
+    #45474c 270deg,
+    #1e1f22 315deg,
+    #2c2d30 360deg
+  );
+}
+
+.knurled-edge {
+  background-image: repeating-conic-gradient(
+    rgba(255, 255, 255, 0.08) 0deg,
+    rgba(255, 255, 255, 0.08) 1.5deg,
+    rgba(0, 0, 0, 0.5) 1.5deg,
+    rgba(0, 0, 0, 0.5) 3deg
+  );
+}
+
+.brass-gradient {
+  background: conic-gradient(
+    from 45deg,
+    #7a561e 0deg,
+    #b88d3b 45deg,
+    #53370f 90deg,
+    #d1a34b 135deg,
+    #694715 180deg,
+    #c49740 225deg,
+    #4a300c 270deg,
+    #dbad54 315deg,
+    #7a561e 360deg
+  );
+}
+
+/* Glowing RF field pulse */
+@keyframes rf-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4), inset 0 0 15px rgba(245, 158, 11, 0.2);
+  }
+  70% {
+    box-shadow: 0 0 0 24px rgba(245, 158, 11, 0), inset 0 0 30px rgba(245, 158, 11, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0), inset 0 0 15px rgba(245, 158, 11, 0.2);
+  }
+}
+
+.rf-active-ring {
+  animation: rf-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #121316;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
